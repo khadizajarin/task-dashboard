@@ -109,13 +109,6 @@ All API requests include the user token for authorized endpoints.
 
 ---
 
-## ⚙️ Notes
-
-* **Recharts:** Ensure parent containers of charts have a fixed height; otherwise charts won’t render.
-* **React StrictMode:** Components may render twice in development — normal behavior.
-
----
-
 ## 📌 Deployment
 
 The project can be deployed to **Vercel**, **Netlify**, or any static hosting service supporting Vite builds.

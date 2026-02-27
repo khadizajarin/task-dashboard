@@ -2,7 +2,7 @@ import { Pause, Square } from "lucide-react";
 
 const TimeTracker = () => {
   return (
-    <div className="bg-sidebar rounded-2xl p-6 text-sidebar-primary  animate-fade-in" style={{ animationDelay: "500ms" }}>
+    <div className="bg-sidebar rounded-2xl p-6 text-sidebar-primary animate-fade-in" style={{ animationDelay: "500ms" }}>
       <h3 className="text-lg font-semibold mb-4">Time Tracker</h3>
       <p className="text-5xl font-bold tracking-tight font-mono">01:24:08</p>
       <div className="flex items-center gap-3 mt-6">

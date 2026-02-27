@@ -1,68 +1,118 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Base */
+  --background: 0 0% 97%;
+  --foreground: 160 15% 12%;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --card: 0 0% 100%;
+  --card-foreground: 160 15% 12%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  --popover: 0 0% 100%;
+  --popover-foreground: 160 15% 12%;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  --primary: 152 45% 28%;
+  --primary-foreground: 0 0% 100%;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  --secondary: 150 8% 94%;
+  --secondary-foreground: 160 15% 12%;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  --muted: 150 8% 94%;
+  --muted-foreground: 160 5% 52%;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  --accent: 152 45% 28%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 150 10% 90%;
+  --input: 150 10% 90%;
+  --ring: 152 45% 28%;
+
+  --radius: 0.75rem;
+
+  --chart-1: 152 55% 35%;
+  --chart-2: 152 45% 45%;
+  --chart-3: 152 35% 55%;
+  --chart-4: 152 25% 65%;
+  --chart-5: 152 15% 75%;
+
+  --warning: 38 92% 50%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius: var(--radius);
+
+  
+  --color-success: hsl(152 55% 42%);
+  --color-success-foreground: hsl(0 0% 100%);
+
+  --color-warning: hsl(38 92% 50%);
+  --color-warning-foreground: hsl(0 0% 100%);
+
+  --color-info: hsl(217 91% 60%);
+  --color-info-foreground: hsl(0 0% 100%);
+
+ 
+  --color-sidebar: hsl(155 30% 10%);
+  --color-sidebar-foreground: hsl(150 10% 75%);
+
+  --color-sidebar-primary: hsl(0 0% 100%);
+  --color-sidebar-primary-foreground: hsl(155 30% 10%);
+
+  --color-sidebar-accent: hsl(155 25% 16%);
+  --color-sidebar-accent-foreground: hsl(0 0% 100%);
+
+  --color-sidebar-border: hsl(155 20% 18%);
+  --color-sidebar-ring: hsl(152 45% 40%);
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
   }
-  a:hover {
-    color: #747bff;
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Utility */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
   }
 }
