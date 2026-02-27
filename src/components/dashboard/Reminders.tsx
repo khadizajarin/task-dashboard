@@ -2,7 +2,7 @@ import { Video } from "lucide-react";
 
 const Reminders = () => {
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 animate-fade-in" style={{ animationDelay: "300ms" }}>
+    <div className="bg-card border border-border rounded-2xl p-6 mt-10 lg:mt-0 animate-fade-in" style={{ animationDelay: "300ms" }}>
       <h3 className="text-lg font-semibold text-foreground mb-4">Reminders</h3>
       <div className="space-y-3">
         <div className="bg-muted rounded-xl p-4">

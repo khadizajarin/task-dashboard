@@ -53,61 +53,101 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+  <div className="flex min-h-screen bg-background">
     
+    {/* Sidebar */}
+    <div className="hidden md:block">
       <Sidebar />
-      <div className="flex-1 flex flex-col min-w-0">
-        <TopBar />
-        <main className="flex-1 p-8 overflow-y-auto scrollbar-thin">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
-              <p className="text-sm text-red-700 mt-1">Plan, prioritize, and accomplish your tasks with ease.</p>
-            </div>
-            <div className="flex gap-3">
-              <button className="flex items-center gap-2 bg-primary px-5 py-2.5 text-primary-foreground rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
-                <Plus className="w-4 h-4" />
-                Add Project
-              </button>
-              <button className="px-5 py-2.5 rounded-xl border border-border text-sm font-semibold text-foreground hover:bg-muted transition-colors">
-                Import Data
-              </button>
-            </div>
+    </div>
+
+    {/* Main Area */}
+    <div className="flex-1 flex flex-col min-w-0">
+      <TopBar />
+
+      <main className="flex-1 px-4 sm:px-6 lg:px-8 py-6 overflow-y-auto scrollbar-thin">
+
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+          <div>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground">
+              Dashboard
+            </h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              Plan, prioritize, and accomplish your tasks with ease.
+            </p>
           </div>
 
+          <div className="flex flex-wrap gap-3">
+            <button className="flex items-center gap-2 bg-primary px-4 sm:px-5 py-2 text-primary-foreground rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
+              <Plus className="w-4 h-4" />
+              Add Project
+            </button>
+            <button className="px-4 sm:px-5 py-2 rounded-xl border border-border text-sm font-semibold text-foreground hover:bg-muted transition-colors">
+              Import Data
+            </button>
+          </div>
+        </div>
 
-          {/* Stat Cards */}
-             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <StatCard title="Total Users" value={data?.overview?.totalUsers?.toLocaleString() ?? "0"} subtitle={`${data?.overview?.growth}% growth`} variant="primary" delay={0} />
-            <StatCard title="Active Users" value={data?.overview?.activeUsers?.toLocaleString() ?? "0"} subtitle="Currently active" delay={50} />
-            <StatCard title="Revenue" value={`$${data?.overview?.revenue?.toLocaleString() ?? "0"}`} subtitle="Total earnings" delay={100} />
-            <StatCard title="Growth" value={`${data?.overview?.growth ?? 0}%`} subtitle="Increased from last month" delay={150} />
+        {/* Stat Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+          <StatCard
+            title="Total Users"
+            value={data?.overview?.totalUsers?.toLocaleString() ?? "0"}
+            subtitle={`${data?.overview?.growth}% growth`}
+            variant="primary"
+            delay={0}
+          />
+          <StatCard
+            title="Active Users"
+            value={data?.overview?.activeUsers?.toLocaleString() ?? "0"}
+            subtitle="Currently active"
+            delay={50}
+          />
+          <StatCard
+            title="Revenue"
+            value={`$${data?.overview?.revenue?.toLocaleString() ?? "0"}`}
+            subtitle="Total earnings"
+            delay={100}
+          />
+          <StatCard
+            title="Growth"
+            value={`${data?.overview?.growth ?? 0}%`}
+            subtitle="Increased from last month"
+            delay={150}
+          />
+        </div>
+
+        {/* Middle Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+          <div className="lg:col-span-2 min-w-0">
+            {data?.analytics && <AnalyticsChart data={data.analytics} />}
           </div>
 
-          {/* Middle Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
-            <div className="lg:col-span-2">
-              {data?.analytics && <AnalyticsChart data={data.analytics} />}
-            </div>
-            <div className="grid grid-rows-2 gap-4">
-              <Reminders />
-              <ProjectList />
-            </div>
+          <div className="grid gap-4">
+            <Reminders />
+            <ProjectList />
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="min-w-0">
+            {data?.users && <TeamCollaboration users={data.users} />}
           </div>
 
-          {/* Bottom Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div className="lg:col-span-1">
-              {data?.users && <TeamCollaboration users={data.users} />}
-            </div>
+          <div className="min-w-0">
             <ProjectProgress />
+          </div>
+
+          <div className="min-w-0">
             <TimeTracker />
           </div>
-        </main>
-      </div>
+        </div>
+
+      </main>
     </div>
-  );
+  </div>
+);
 };
 
 export default Dashboard;

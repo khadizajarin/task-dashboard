@@ -15,7 +15,7 @@ const AnalyticsChart = ({ data }: AnalyticsChartProps) => {
   const totalConversions = data.reduce((sum, d) => sum + d.conversions, 0);
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 h-full animate-fade-in" style={{ animationDelay: "200ms" }}>
+    <div className="bg-card border border-border rounded-2xl p-6 lg:h-full h-96 animate-fade-in" style={{ animationDelay: "200ms" }}>
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-foreground">Project Analytics</h3>
         <div className="flex gap-4 text-xs text-muted-foreground">
@@ -33,7 +33,7 @@ const AnalyticsChart = ({ data }: AnalyticsChartProps) => {
           </span>
         </div>
       </div>
-      <div className=" h-full">
+      <div className=" lg:h-full h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} barCategoryGap="25%">
             <XAxis
