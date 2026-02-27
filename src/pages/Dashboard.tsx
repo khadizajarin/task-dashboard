@@ -66,7 +66,7 @@ const Dashboard = () => {
               <p className="text-sm text-red-700 mt-1">Plan, prioritize, and accomplish your tasks with ease.</p>
             </div>
             <div className="flex gap-3">
-              <button className="flex items-center gap-2 bg-primary px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
+              <button className="flex items-center gap-2 bg-primary px-5 py-2.5 text-primary-foreground rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
                 <Plus className="w-4 h-4" />
                 Add Project
               </button>
