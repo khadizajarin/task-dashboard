@@ -41,7 +41,7 @@ const Login = () => {
             <h1 className="text-4xl font-bold text-sidebar-primary leading-tight mb-6">
               Manage your tasks with ease and efficiency
             </h1>
-            <p className="text-sidebar-muted text-lg leading-relaxed">
+            <p className="text-white/60 text-lg leading-relaxed">
               Plan, prioritize, and accomplish your tasks with our intuitive dashboard. 
               Stay organized and boost your productivity.
             </p>
@@ -55,7 +55,7 @@ const Login = () => {
           ].map((stat) => (
             <div key={stat.label} className="bg-sidebar-accent rounded-xl p-4 flex-1">
               <p className="text-2xl font-bold text-sidebar-primary">{stat.value}</p>
-              <p className="text-sidebar-muted text-sm mt-1">{stat.label}</p>
+              <p className="text-white/60 text-sm mt-1">{stat.label}</p>
             </div>
           ))}
         </div>
