@@ -3,7 +3,6 @@
 @import "shadcn/tailwind.css";
 
 :root {
-  /* Base */
   --background: 0 0% 97%;
   --foreground: 160 15% 12%;
 
@@ -110,7 +109,6 @@
   }
 }
 
-/* Utility */
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;

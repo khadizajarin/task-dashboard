@@ -1,4 +1,4 @@
-// import { Toaster } from "@/components/ui/toaster";
+
 import "./App.css";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -7,14 +7,12 @@ import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-// import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      {/* <Toaster /> */}
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -28,7 +26,6 @@ const App = () => (
                 </ProtectedRoute>
               }
             />
-            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </BrowserRouter>
       </AuthProvider>
