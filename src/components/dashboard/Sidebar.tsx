@@ -1,5 +1,5 @@
 import { useAuth } from "./../../contexts/AuthContext.tsx";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import {
   LayoutDashboard,
   ListTodo,
@@ -28,7 +28,6 @@ const generalItems = [
 const Sidebar = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleLogout = () => {
     logout();
