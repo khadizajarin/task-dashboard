@@ -1,4 +1,4 @@
-import { useAuth } from "./../../contexts/AuthContext";
+import { useAuth } from "./../../contexts/AuthContext.tsx";
 import { Search, Mail, Bell } from "lucide-react";
 
 const TopBar = () => {

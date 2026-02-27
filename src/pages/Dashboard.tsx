@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "./../contexts/AuthContext";
-import Sidebar from "./../components/dashboard/Sidebar";
-import TopBar from "./../components/dashboard/TopBar";
-import StatCard from "./../components/dashboard/StatCard";
-import AnalyticsChart from "./../components/dashboard/AnalyticsChart";
-import Reminders from "./../components/dashboard/Reminders";
-import ProjectList from "./../components/dashboard/ProjectList";
-import TeamCollaboration from "./../components/dashboard/TeamCollaboration";
-import ProjectProgress from "./../components/dashboard/ProjectProgress";
-import TimeTracker from "./../components/dashboard/TimeTracker";
+import { useAuth } from "./../contexts/AuthContext.tsx";
+import Sidebar from "./../components/dashboard/Sidebar.tsx";
+import TopBar from "./../components/dashboard/TopBar.tsx";
+import StatCard from "./../components/dashboard/StatCard.tsx";
+import AnalyticsChart from "./../components/dashboard/AnalyticsChart.tsx";
+import Reminders from "./../components/dashboard/Reminders.tsx";
+import ProjectList from "./../components/dashboard/ProjectList.tsx";
+import TeamCollaboration from "./../components/dashboard/TeamCollaboration.tsx";
+import ProjectProgress from "./../components/dashboard/ProjectProgress.tsx";
+import TimeTracker from "./../components/dashboard/TimeTracker.tsx";
 import { Plus } from "lucide-react";
 
 interface DashboardData {
