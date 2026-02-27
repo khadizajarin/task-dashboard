@@ -10,6 +10,7 @@ import {
   HelpCircle,
   LogOut,
   CheckCircle2,
+  Smartphone,
 } from "lucide-react";
 
 const menuItems = [
@@ -35,7 +36,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="w-64 bg-sidebar min-h-screen flex flex-col p-6 animate-slide-in-left">
+    <aside className="w-72 bg-sidebar h-full flex flex-col p-6 animate-slide-in-left">
       {/* Logo */}
       <div className="flex items-center gap-3 mb-10">
         <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center">
@@ -75,7 +76,7 @@ const Sidebar = () => {
           })}
         </nav>
 
-        <p className="text-xs font-semibold text-sidebar-muted uppercase tracking-wider mt-8 mb-4">General</p>
+        <p className="text-xs font-semibold text-white uppercase tracking-wider mt-8 mb-4">General</p>
         <nav className="space-y-1">
           {generalItems.map((item) => (
             <button
@@ -87,17 +88,47 @@ const Sidebar = () => {
               {item.label}
             </button>
           ))}
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-sidebar-foreground hover:bg-destructive/20 hover:text-destructive transition-all"
+            >
+              <LogOut className="w-5 h-5" />
+              Logout
+            </button>
         </nav>
       </div>
 
-      {/* Logout */}
-      <button
-        onClick={handleLogout}
-        className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-sidebar-foreground hover:bg-destructive/20 hover:text-destructive transition-all"
-      >
-        <LogOut className="w-5 h-5" />
-        Logout
-      </button>
+       <div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-emerald-950 via-emerald-900 to-emerald-800 p-6 text-white shadow-xl">
+
+      {/* Background Decorative Glow */}
+      <div className="absolute -top-16 -right-16 w-56 h-56 bg-emerald-500/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-40 h-40 bg-emerald-400/10 rounded-full blur-2xl" />
+
+      {/* Content */}
+      <div className="relative z-10 space-y-4">
+
+        {/* Icon */}
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-700/60 backdrop-blur-md">
+          <Smartphone className="w-5 h-5 text-emerald-200" />
+        </div>
+
+        {/* Text */}
+        <div>
+          <h3 className="text-lg font-semibold leading-tight">
+            Download our <br /> Mobile App
+          </h3>
+          <p className="text-sm text-emerald-200 mt-1">
+            Get easy access in another way
+          </p>
+        </div>
+
+        {/* Button */}
+        <button className="w-full bg-emerald-600 hover:bg-emerald-500 transition-colors duration-200 text-white py-2.5 rounded-xl font-medium shadow-md">
+          Download
+        </button>
+      </div>
+    </div>
+    
     </aside>
   );
 };

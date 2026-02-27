@@ -33,7 +33,7 @@ const AnalyticsChart = ({ data }: AnalyticsChartProps) => {
           </span>
         </div>
       </div>
-      <div className=" lg:h-full h-64">
+      <div className=" lg:h-5/6 h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} barCategoryGap="25%">
             <XAxis
