@@ -5,11 +5,11 @@ import TopBar from "./../components/dashboard/TopBar.tsx";
 import StatCard from "./../components/dashboard/StatCard.tsx";
 import AnalyticsChart from "./../components/dashboard/AnalyticsChart.tsx";
 import Reminders from "./../components/dashboard/Reminders.tsx";
-import ProjectList from "./../components/dashboard/ProjectList.tsx";
 import TeamCollaboration from "./../components/dashboard/TeamCollaboration.tsx";
 import ProjectProgress from "./../components/dashboard/ProjectProgress.tsx";
 import TimeTracker from "./../components/dashboard/TimeTracker.tsx";
 import { Plus } from "lucide-react";
+import ProductList from "../components/dashboard/ProductList.tsx";
 
 interface DashboardData {
   overview: { totalUsers: number; activeUsers: number; revenue: number; growth: number };
@@ -125,7 +125,7 @@ const Dashboard = () => {
 
           <div className="grid gap-4">
             <Reminders />
-            <ProjectList />
+            {data?.products && <ProductList products={data.products} />}
           </div>
         </div>
 
@@ -136,7 +136,7 @@ const Dashboard = () => {
           </div>
 
           <div className="min-w-0">
-            <ProjectProgress />
+            {data?.analytics && <ProjectProgress analytics={data.analytics} />}
           </div>
 
           <div className="min-w-0">
